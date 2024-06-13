@@ -1,0 +1,9 @@
+<%= turbo_frame_tag 'users' do %>
+  <ul>
+  <% @mentions.each do |mention| %>
+    <li role="option" class="aria-selected:bg-sky-700 text-white p-1 bg-blue-600" data-trix-attachment-content="<a href='#' class='text-blue-500'> <%= mention %> </a>" data-trix-attachment-content-type="application/vnd.my-application.mention" class="aria-selected:bg-sky-700">
+      <%= mention %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
