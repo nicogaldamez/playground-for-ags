@@ -1,0 +1,16 @@
+<div id="<%= dom_id book %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= edit_field_link book, :title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Isbn:</strong>
+    <%= book.isbn %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Number of pages:</strong>
+    <%= book.number_of_pages %>
+  </p>
+</div>

@@ -1,0 +1,1 @@
+class Book < ApplicationRecord; end

@@ -1,0 +1,25 @@
+<%= turbo_frame_tag dom_id(@edit_field_resource, @field) do %>
+  <div class="relative">
+    <%= form_with model: @edit_field_resource, data: { controller: 'inline-edit' } do |f| %>
+      <%= f.text_field @field, 
+        autofocus: true,
+        class: 'block bg-transparent border-0 p-0 focus:border-transparent focus:ring-0',
+        data: {
+          inline_edit_target: 'input',
+          action: %[
+            keydown.enter->inline-edit#submitForm:prevent
+            keydown.esc->inline-edit#abort
+          ]
+        }
+      %>
+      <div class="absolute -bottom-7">
+        <%= f.submit 'Save', class: 'rounded-md py-1 px-2 bg-blue-600 text-xs text-white font-medium'%>
+        <%= link_to 'Cancel', '#', class: 'ml-1 rounded-md py-1 px-2 bg-gray-100 text-xs inline-block font-medium',
+          data: {
+            action: 'click->inline-edit#abort:prevent'
+          }
+        %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

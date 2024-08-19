@@ -1,12 +1,12 @@
 <div id="<%= dom_id message %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">Title:</strong>
-    <%= message.title %>
+    <%= edit_field_link @message, :title %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Body:</strong>
-    <%= message.body %>
+    <%= simple_format message.body %>
   </p>
 
 </div>

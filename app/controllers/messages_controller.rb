@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[ show edit update destroy ]
+  include EditField
+
+  before_action :set_message, only: %i[ show edit update destroy edit_field ]
 
   # GET /messages
   def index

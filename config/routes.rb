@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :messages do
+  concern :edit_field do
+    get ':field/edit', on: :member, action: :edit_field, as: :edit_field
+  end
+
+  resources :books, concerns: %i[edit_field]
+  resources :messages, concerns: %i[edit_field] do
     get :list, on: :collection
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
